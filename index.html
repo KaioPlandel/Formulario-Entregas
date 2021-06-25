@@ -50,6 +50,7 @@
                 <label for="acrescimo">Acréscimo</label>
                 <input type="number" placeholder="Acréscimo" id="acre" value="0" name="Acrescimo" class="num">
             </div>
+            <textarea name="coment" id="coment" cols="35" rows="3"></textarea>
             <input type="submit" id="enviar" onclick="gotowhatsapp() ">
         </form>
     </div>
@@ -99,6 +100,7 @@
         var nS = document.getElementById("nserra").value;
         var contS = nS * 30
 
+        var comentario = document.getElementById('coment').value
         
 
 
@@ -142,6 +144,7 @@
         + "%0a"
         + "Desconto: " + desconto + "%0a"
         + "Acréscimo: " + acrescimo + "%0a"
+        + "Obs: " + comentario + "%0a"
         +"------------------------------------------------------------" + "%0a"
         +"               "+  "  *TOTAL*: " + "R$" + valorTotal + ",00" + "%0a"
         + "%0a"
