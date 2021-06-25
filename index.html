@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <form action="" id="form">
+            
+            <h2 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Relatório Entregas: </h2>
+            <div id="header">
+                <input type="date" id="data" >
+                <input type="text" name="loja" placeholder="Nome da Loja" id="name"><br>
+                <input type="number" id="phone" placeholder="tel:"> <br>
+            </div>
+            
+            <div class="bloco">
+                <input type="text" value="Vila Velha" id="vilavelha">
+                <input type="number" placeholder="Quantidade" id="nvilavelha" value="0" class="num"><br>
+            </div>
+            <div class="bloco">
+                
+                <input type="text" value="Vitória" id="vitoria">
+                <input type="number" placeholder="quantidade" id="nvitoria" value="0" class="num"><br>
+            </div>
+            <div class="bloco">
+                <input type="text" value="Viana" id="viana" >
+                <input type="number" placeholder="quantidade" id="nviana" value="0" class="num"><br>
+            </div>
+            <div class="bloco">
+                <input type="text" value="Cariacica" id="cariacica">
+                <input type="number" placeholder="quantidade" id="ncariacica" value="0" class="num"><br>
+            </div>
+            <div class="bloco">
+                <input type="text" value="Cariacica Sede" id="cariacica-sede">
+                <input type="number" placeholder="quantidade" id="ncariacica-sede" value="0" class="num"><br>
+            </div>
+            <div class="bloco">
+                <input type="text" value="Serra" id="serra">
+                <input type="number" placeholder="quantidade" id="nserra" value="0" class="num"><br>
+            </div>
+            <div class="bloc">
+                <label for="Desconto">Desconto</label> <br>
+                <input type="number" placeholder="Desconto" id="desc" value="0" name="Desconto" class="num">
+                <label for="acrescimo">Acréscimo</label>
+                <input type="number" placeholder="Acréscimo" id="acre" value="0" name="Acrescimo" class="num">
+            </div>
+            <input type="submit" id="enviar" onclick="gotowhatsapp() ">
+        </form>
+    </div>
+    <script>
+
+
+        let ale =Math.floor( Math.random()*500)
+         function gotowhatsapp() {
+        
+        var name = document.getElementById("name").value;
+        var toUP = name.toUpperCase()
+        var phone = document.getElementById("phone").value;
+        var data = document.getElementById('data').value;
+
+
+        //vila velha entregas
+        var enVV = document.getElementById("vilavelha").value;
+        var nVV = document.getElementById("nvilavelha").value;
+        var contVV = nVV *10;
+
+        //vitoria  entregas
+        var enV = document.getElementById("vitoria").value;
+        var nV = document.getElementById("nvitoria").value;
+        var contV = nV * 15
+
+        //viana  entregas
+        var enVI = document.getElementById("viana").value;
+        var nVI = document.getElementById("nviana").value;
+        var contVI = nVI * 25
+
+
+        //cariacica entregas
+        var enCC = document.getElementById("cariacica").value;
+        var nCC = document.getElementById("ncariacica").value;
+        var contCC = nCC * 15
+        
+        
+
+         //cariacica sede  entregas
+        var enCS = document.getElementById("cariacica-sede").value;
+        var nCS = document.getElementById("ncariacica-sede").value;
+        var contCS = nCS * 25
+
+        
+        //serra  entregas
+        var enS = document.getElementById("serra").value;
+        var nS = document.getElementById("nserra").value;
+        var contS = nS * 30
+
+        
+
+
+        //total
+         var cVV = parseInt(nVV)
+         var cCC = parseInt(nCC)
+         var cCS = parseInt(nCS)
+         var cV = parseInt(nV)
+         var cVI = parseInt(nVI)
+         var cS = parseInt(nS)
+         var totalQ = cVV + cCC + cCS + cV + cVI + cS
+        
+         // acrescimo e desconto 
+         var desc = document.getElementById('desc').value;
+         var desconto =parseInt(desc)
+
+         var acre = document.getElementById('acre').value;
+         var acrescimo = parseInt(acre)
+
+         //valor total
+        var valorTotal = (contVV + contCC + contCS + contV + contVI + contS + acrescimo ) - desconto
+         
+
+        var url = "https://wa.me/" + 55 + phone +"?text="
+        + "*Plandel Service*" + "%0a"
+        + "%0a"
+        + "Protocolo n: " + ale + "     "
+        + "Data: "+ data + "%0a"
+        +"------------------------------------------------------------" + "%0a"
+        + "Nome da Loja: " + toUP+ "%0a"
+        + "Tel: " + phone + "%0a"
+        + "-----------------------------------------------------------" + "%0a"
+        + "Quantidade Total de Entregas: " + totalQ + "%0a"
+        + "%0a"
+        +"                "+nVV + " Vila Velha: " + "R$" + contVV + ",00" + "%0a"
+        +"                "+nV + " Vitória: " + "R$" + contV + ",00" + "%0a"
+        +"                "+nVI + " Viana: " + "R$" + contVI + ",00" + "%0a"
+        +"                "+nCC + " Cariacica: " + "R$" + contCC + ",00" + "%0a" 
+        +"                "+nCS + " Cariacica Sede: " + "R$" + contCS + ",00" + "%0a" 
+        +"                "+nS + " Serra: " + "R$" + contS + ",00" + "%0a"
+        + "%0a"
+        + "Desconto: " + desconto + "%0a"
+        + "Acréscimo: " + acrescimo + "%0a"
+        +"------------------------------------------------------------" + "%0a"
+        +"               "+  "  *TOTAL*: " + "R$" + valorTotal + ",00" + "%0a"
+        + "%0a"
+        + "Pix: (27) 99993-0874 " + "%0a"
+        +"https://picpay.me/kaio.plandel"
+        window.open(url, '_blank').focus();
+    }
+    </script>
+    
+</body>
+</html>
