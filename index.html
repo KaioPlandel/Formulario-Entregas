@@ -124,26 +124,55 @@
         var valorTotal = (contVV + contCC + contCS + contV + contVI + contS + acrescimo ) - desconto
          
 
+        function arrumar(a,b,c) {
+            if(a != 0) {
+                return a +" "+ b + " " +"R$"+ c+",00" + "%0a"
+                
+            }
+            else {
+                return ''
+            
+            }
+        }
+
+        function descont(x) {
+            if(x != 0){
+            return "Desconto: " + "" + x + "" + "%0a"
+        }
+        else {
+            return ''
+        }
+    }
+
+        function acres(y) {
+            if(y != 0) {
+                return "Acréscimo: " + ""+ y  +""+ "%0a"
+            } else {
+                return ''
+            }
+        }
+
+         
+
         var url = "https://wa.me/" + 55 + phone +"?text="
         + "*Plandel Service*" + "%0a"
         + "%0a"
         + "Protocolo n: " + ale + "     "
         + "Data: "+ data + "%0a"
         +"------------------------------------------------------------" + "%0a"
-        + "Nome da Loja: " + toUP+ "%0a"
-        + "Tel: " + phone + "%0a"
+        + "Nome da Loja: " +"*"+ toUP+"*" +"%0a"
         + "-----------------------------------------------------------" + "%0a"
         + "Quantidade Total de Entregas: " + totalQ + "%0a"
         + "%0a"
-        +"                "+nVV + " Vila Velha: " + "R$" + contVV + ",00" + "%0a"
-        +"                "+nV + " Vitória: " + "R$" + contV + ",00" + "%0a"
-        +"                "+nVI + " Viana: " + "R$" + contVI + ",00" + "%0a"
-        +"                "+nCC + " Cariacica: " + "R$" + contCC + ",00" + "%0a" 
-        +"                "+nCS + " Cariacica Sede: " + "R$" + contCS + ",00" + "%0a" 
-        +"                "+nS + " Serra: " + "R$" + contS + ",00" + "%0a"
+        + arrumar(nVV,enVV,contVV) 
+        + arrumar(nV,enV,contV) 
+        + arrumar(nVI,enVI,contVI) 
+        + arrumar(nCC,enCC,contCC) 
+        + arrumar(nCS,enCS,contCS) 
+        + arrumar(nS,enS,contS) 
         + "%0a"
-        + "Desconto: " + desconto + "%0a"
-        + "Acréscimo: " + acrescimo + "%0a"
+        + descont(desconto)
+        + acres(acrescimo)
         + "Obs: " + comentario + "%0a"
         +"------------------------------------------------------------" + "%0a"
         +"               "+  "  *TOTAL*: " + "R$" + valorTotal + ",00" + "%0a"
