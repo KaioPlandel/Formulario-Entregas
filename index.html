@@ -126,7 +126,7 @@
 
         function arrumar(a,b,c) {
             if(a != 0) {
-                return a +" "+ b + " " +"R$"+ c+",00" + "%0a"
+                return + a +" "+ b + " " +"R$"+ c+",00" + "%0a" + "%0a"
                 
             }
             else {
@@ -156,13 +156,13 @@
 
         var url = "https://wa.me/" + 55 + phone +"?text="
         + "*Plandel Service*" + "%0a"
+        + "-----------------------------------------------------------" + "%0a"
+        + "Nome da Loja: " +"*"+ toUP+"*" +"%0a"
         + "%0a"
         + "Protocolo n: " + ale + "     "
         + "Data: "+ data + "%0a"
-        +"------------------------------------------------------------" + "%0a"
-        + "Nome da Loja: " +"*"+ toUP+"*" +"%0a"
         + "-----------------------------------------------------------" + "%0a"
-        + "Quantidade Total de Entregas: " + totalQ + "%0a"
+        + "Total de Entregas: " + totalQ + "%0a"
         + "%0a"
         + arrumar(nVV,enVV,contVV) 
         + arrumar(nV,enV,contV) 
@@ -175,7 +175,7 @@
         + acres(acrescimo)
         + "Obs: " + comentario + "%0a"
         +"------------------------------------------------------------" + "%0a"
-        +"               "+  "  *TOTAL*: " + "R$" + valorTotal + ",00" + "%0a"
+        +"               "+  "  *TOTAL*: " + "*R$" + valorTotal + ",00*" + "%0a"
         + "%0a"
         + "Pix: (27) 99993-0874 " + "%0a"
         +"https://picpay.me/kaio.plandel"
