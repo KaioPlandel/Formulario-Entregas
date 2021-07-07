@@ -14,6 +14,9 @@ body {
     border-radius: 7px;
     box-shadow: 2px 2px 10px black;
 }
+#pagar {
+    margin: 8px;  
+}
 
 #form {
     display: flex;
